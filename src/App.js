@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Link } from 'react-router-dom';
 import './App.css';
+import Button from './Components/HOCs/Button';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="messageWrapper">
+          <h1 className="indexMessage">Welcome To This Test Web App</h1>
+          <div className="buttonWrapper">
+            <Link to="/login">
+              <Button class="HOCButton" buttonMessage="Login" />
+            </Link>
+            <Link to="/signup">
+              <Button class="HOCButton" buttonMessage="Sign UP" />
+            </Link>
+            <Link to="/apolloList">
+              <Button class="HOCButton" buttonMessage="Users List" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
